@@ -56,18 +56,13 @@ public class Control : MonoBehaviour {
 		gameObject.transform.Translate(Vector3.left * speed * Time.deltaTime);
 	}
 
-	// A load of shit that doesn't work
-	void OnControllerColliderHit(ControllerColliderHit hit) 
+	void OnCollisionEnter2D()
 	{
-		Debug.Log ("hit");
+		speed *= 0.4f;
 	}
-
-	void OnCollisionEnter(Collision hit)
+	void OnCollisionStay2D()
 	{
-		if(hit.gameObject)
-		{
-			speed-=1;
-		}
+		speed *= 0.3f;
 	}
 
 }
