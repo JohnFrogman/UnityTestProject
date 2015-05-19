@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<town id="default">
+This is the default town statement, this means the town is not finished.
+</town>
+<town id="test">
+You spent the days of your youth in Exemeru, known throughout the land as the town of testing. You had a hard life growing up here.
+</town>
+</root>

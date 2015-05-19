@@ -7,7 +7,7 @@ public class Enter : MonoBehaviour
 	public int[] goods = new int[10];
 	public string townname = "default";
 	public string subtitle = "default";
-	public string descLocation = "default";
+	public string townID = "default";
 
 	// Basic idea here is to generate a gui with all the town details on from the information above.
 	void OnTriggerStay2D(Collider2D other)
@@ -19,7 +19,7 @@ public class Enter : MonoBehaviour
 				Time.timeScale = 0;
 				townUi.SetActive (true);
 				LoadTown town = (LoadTown)townUi.GetComponent(typeof(LoadTown));
-				town.load(townname, subtitle, descLocation, goods);
+				town.load(townname, subtitle, townID, goods);
 
 				// for each goods in good that doesnt have an element of value -1 put a new good in and set it's price to whatever
 			} 
