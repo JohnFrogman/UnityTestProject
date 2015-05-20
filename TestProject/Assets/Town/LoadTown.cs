@@ -9,6 +9,7 @@ public class LoadTown : MonoBehaviour
 	public GameObject titleBox;
 	public GameObject subtitleBox;
 	public GameObject descriptionBox;
+	public GameObject dockButton;
 	private XmlDocument towns = new XmlDocument();
 
 	// Loads in the town's name and subname via a public variable in the script, the town's 
@@ -30,6 +31,7 @@ public class LoadTown : MonoBehaviour
 	public void undock()
 	{
 		Time.timeScale = 1;
+		dockButton.SetActive (false);
 		gameObject.SetActive (false);
 	}
 }

@@ -1,9 +1,29 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <root>
+
 <town id="default">
 This is the default town statement, this means the town is not finished.
 </town>
+
 <town id="test">
 You spent the days of your youth in Exemeru, known throughout the land as the town of testing. You had a hard life growing up here.
 </town>
+
+<town id="hana">
+In the oasis town of Banh there lived a merchant named Hana, she was a spice trader to begin with. She travelled the world building a vast commercial empire. She longed to retire one day to a beautiful green land, far from the savage heat of Banh. It was her life long dream that brought the Sky Garden to life. 
+
+Hana is long dead but her legacy lives on. The Sky Garden is a vast artificial island, with pristine gardens and vast verdant forests teeming with wildlife. It has since been expanded from Hana's original creation, to the point of being opened up to those outside the Hana clan.
+
+The Sky Garden is still the of the Hana's power. A still formidable merchant family long after the departure of their matriarch, the island however has grown into a minor trade nexus in its own right with the discovery of the Kingdom of Belze to the south. With that came a high demand for enamel, to fuel ever increasing expansion as trade with Belze continues.
+</town>
+
+<town id="banh">
+</town>
+
+<town id="moho">
+</town>
+
+<town id="">
+</town>
+
 </root>
