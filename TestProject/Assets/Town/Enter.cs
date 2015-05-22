@@ -4,14 +4,14 @@ using UnityEngine.UI;
 
 public class Enter : MonoBehaviour 
 {
+	private int[] goods = new int[10];
 	public GameObject townUi;
 	public GameObject dockButton;
-	public int[] goods = new int[10];
 	public string townname = "default";
 	public string subtitle = "default";
 	public string townID = "default";
 
-
+	// Shows the "Press E to dock" button
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		dockButton.SetActive (true);
@@ -20,8 +20,7 @@ public class Enter : MonoBehaviour
 	{
 		dockButton.SetActive (false);
 	}
-	// Basic idea here is to generate a gui with all the town details on from the information above.
-	// This is unresponsive 
+	// Generates a gui with all the town details on from the information above.
 	void OnTriggerStay2D(Collider2D other)
 	{
 		if (Input.GetButtonDown ("Dock")) 

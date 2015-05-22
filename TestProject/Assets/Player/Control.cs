@@ -13,12 +13,12 @@ public class Control : MonoBehaviour {
 	public float brakepower = 0.1F;
 	public float speed;
 	
-	void Update () 
+	void FixedUpdate () 
 	{
 		// Rotates the vehicle around, it's forward and back rather than left and right for the rotation but w/e.
 		if (Input.GetButton("Turn")) 
 		{
-			gameObject.transform.Rotate(Input.GetAxisRaw("Turn")*turnRate*Vector3.forward*Time.deltaTime);
+			gameObject.transform.Rotate(Input.GetAxisRaw("Turn")*turnRate*Vector3.back*Time.deltaTime);
 		}
 		if (Input.GetButton ("Accelerate")) 
 		{
@@ -53,7 +53,7 @@ public class Control : MonoBehaviour {
 			}
 		}
 			// The current speed.
-		gameObject.transform.Translate(Vector3.left * speed * Time.deltaTime);
+		gameObject.transform.Translate(Vector3.up * speed * Time.deltaTime);
 	}
 
 	void OnCollisionEnter2D()

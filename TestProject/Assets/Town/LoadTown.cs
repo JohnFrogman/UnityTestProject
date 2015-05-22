@@ -27,6 +27,10 @@ public class LoadTown : MonoBehaviour
 		descriptionBox.GetComponent<Text>().text = description; 
 	}
 
+	public void trade()
+	{
+	}
+
 	// Get this to work with the E button too methinks.
 	public void undock()
 	{
