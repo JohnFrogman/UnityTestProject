@@ -18,14 +18,14 @@ public class Control : MonoBehaviour {
 		// Rotates the vehicle around, it's forward and back rather than left and right for the rotation but w/e.
 		if (Input.GetButton("Turn")) 
 		{
-			gameObject.transform.Rotate(Input.GetAxisRaw("Turn")*turnRate*Vector3.back*Time.deltaTime);
+			gameObject.transform.Rotate(Input.GetAxisRaw("Turn")*turnRate*Vector3.back);
 		}
 		if (Input.GetButton ("Accelerate")) 
 		{
 			// Stops you breaking the speed limit, for both forward and reverse.
 			if (speed*Input.GetAxisRaw("Accelerate") < maxSpeed)
 			{
-				speed += Input.GetAxisRaw("Accelerate")*acceleration*Time.deltaTime;
+				speed += Input.GetAxisRaw("Accelerate")*acceleration;
 			}
 		}
 		// Exponentially decaying function
@@ -53,7 +53,7 @@ public class Control : MonoBehaviour {
 			}
 		}
 			// The current speed.
-		gameObject.transform.Translate(Vector3.up * speed * Time.deltaTime);
+		gameObject.transform.Translate(Vector3.up * speed * Time.fixedDeltaTime);
 	}
 
 	void OnCollisionEnter2D()
