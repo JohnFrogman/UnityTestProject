@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Camera : MonoBehaviour 
-	{
+public class myCamera : MonoBehaviour 
+{
 	private float x;
 	private float y;
 	private GameObject focus;
