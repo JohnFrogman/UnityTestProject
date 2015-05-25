@@ -19,7 +19,7 @@ public class LoadTown : MonoBehaviour
 	// at what goes where in the XML file and stuff.
 	public void load(string name, string subname, string townID, int[] goods)
 	{
-		towns.Load ("Assets/Town/TownDescriptions");
+		towns.Load ("Assets/OverWorld/Town/TownDescriptions");
 		XmlNode node = towns.SelectSingleNode("/root/town[@id='" + townID + "']");
 		string description = node.InnerText;
 		titleBox.GetComponent<Text>().text = name;
