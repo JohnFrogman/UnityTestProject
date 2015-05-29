@@ -4,6 +4,7 @@ using System.Collections;
 public class CannonBallScript : MonoBehaviour 
 {	
 	public float fallSpeed = 30f;
+	public float speed = 100f;
 	void Start () 
 	{
 	}
