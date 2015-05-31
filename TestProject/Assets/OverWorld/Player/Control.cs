@@ -3,7 +3,8 @@ using System.Collections;
 using System;
 
 
-public class Control : MonoBehaviour {
+public class Control : MonoBehaviour 
+{
 	public float maxSpeed = 50; 
 	public float acceleration = 2;
 	public float turnRate = 3;

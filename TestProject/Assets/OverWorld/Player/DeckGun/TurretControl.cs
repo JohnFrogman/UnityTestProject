@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TurretControl : MonoBehaviour 
 {
+	public GameObject projectile;
+
 	private bool active;
 	public Vector3 p;
 	public Vector3 q;
@@ -26,6 +28,12 @@ public class TurretControl : MonoBehaviour
 		{
 			active = !active;
 		}
+
+		if (Input.GetButtonDown ("Fire")) 
+		{
+			Instantiate(projectile);
+		}
+
 
 		if (active)
 		{
