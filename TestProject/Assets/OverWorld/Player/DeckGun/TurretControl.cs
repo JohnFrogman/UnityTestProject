@@ -29,14 +29,13 @@ public class TurretControl : MonoBehaviour
 			active = !active;
 		}
 
-		if (Input.GetButtonDown ("Fire")) 
-		{
-			Instantiate(projectile);
-		}
-
-
 		if (active)
 		{
+			if (Input.GetButtonDown ("Fire") ) 
+			{
+				Instantiate(projectile);
+			}
+
 			q = (Vector3)Input.mousePosition;
 			q.z = transform.position.z;
 			p = camera.ScreenToWorldPoint(q);

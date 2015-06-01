@@ -3,21 +3,28 @@ using System.Collections;
 
 public class CannonBallScript : MonoBehaviour 
 {	
-	public float fallSpeed = 30f;
-	public float speed = 50f;
-	public Vector3 initialDirection;	
+	private GameObject deckGun;
+	private Transform position;
+	public float speed = 100f;
+	private float lifetime = 80f;	
+
 	void Start () 
 	{
-
+		deckGun = GameObject.FindWithTag("gun");
+		position = deckGun.transform;
+		gameObject.transform.rotation = position.rotation;
+		gameObject.transform.position = position.position;
+		gameObject.transform.position += Vector3.forward * 10f;
 	}
+
 	void FixedUpdate () 
 	{
 		// Needs proper motion implementing, like an actual projectile.
-		if (transform.position.z > 350f) 
+		if (lifetime == 0) 
 		{
 			Destroy(gameObject);
 		}
-		gameObject.transform.Translate(Vector3.down * fallSpeed * Time.fixedDeltaTime);
-		gameObject.transform.Translate(Vector3.forward * speed * Time.fixedDeltaTime);
+		lifetime --;
+		gameObject.transform.Translate(Vector3.up * speed * Time.fixedDeltaTime);
 	} 
 }
