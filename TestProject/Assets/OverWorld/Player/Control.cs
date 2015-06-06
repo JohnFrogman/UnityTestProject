@@ -5,6 +5,12 @@ using System;
 
 public class Control : MonoBehaviour 
 {
+	private float healthPoints = 10f;
+
+	public bool invincible = false;
+	public float invincibleDuration = 3f;
+	public float invincibleMaxDuration = 3f;
+
 	public float maxSpeed = 50; 
 	public float acceleration = 2;
 	public float turnRate = 3;
@@ -53,17 +59,43 @@ public class Control : MonoBehaviour
 				Time.timeScale = 1;
 			}
 		}
-			// The current speed.
+
+		if (invincible == true) 
+		{
+			if (invincibleDuration <= 0)
+			{
+				invincibleDuration =- 1f;
+			}
+		}
+
+		if (healthPoints <=1f)
+		{
+			Destroy(gameObject);
+		}
+
+		// The current speed.
 		gameObject.transform.Translate(Vector3.up * speed * Time.fixedDeltaTime);
 	}
 
 	void OnCollisionEnter2D()
 	{
+		takeDamage ();
 		speed *= 0.4f;
 	}
 	void OnCollisionStay2D()
 	{
+		takeDamage ();
 		speed *= 0.3f;
+	}
+
+	void takeDamage()
+	{
+		if (invincible == false) 
+		{
+			healthPoints -= 5f;
+			invincible = true;
+			invincibleDuration = invincibleMaxDuration;
+		}
 	}
 
 }
